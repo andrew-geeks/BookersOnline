@@ -13,8 +13,8 @@ import Genre from "./components/genre";
 function App() {
   return (
       <div className="App">
-        <Navbar />
         <Router>
+          <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path='/cart' exact component={Cart} />
