@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-const {MongoClient} = require('mongodb');
+const mongoose = require('mongoose');
 const home = require('./routes/home');
+const books =  require('./routes/Books');
 const cors = require("cors");
 
 //app
@@ -17,17 +18,30 @@ app.use(cors(
 ))
 
 //mongoAtlas conn.
-async function mongoConnect(){
-    const client = new MongoClient("mongodb+srv://bksonline:<bks@2022>@cluster0.b0wty.mongodb.net/bookersonline?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true });
-    await client.connect();   
-    console.log("done");
+const url = "mongodb+srv://bksonline:TS2cTEPhbM2ETHc3@cluster0.b0wty.mongodb.net/bookersonline?retryWrites=true&w=majority";
+const connectionParams = {
+    useNewUrlParser:true,
+    useUnifiedTopology:true 
 }
+mongoose.connect(url,connectionParams)
+    .then(()=>{
+        console.log("db connected");
+    })
+    .catch((err)=>{
+        console.log("ERROR:"+err);
+    })
 
 
+
+
+
+//routes
 app.use("/",home);
+app.use("/books",books);
 
+//port
 app.listen(4000,()=>{
     console.log("server is running");
-    mongoConnect();
 })
+
 

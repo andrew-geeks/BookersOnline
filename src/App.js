@@ -8,6 +8,7 @@ import Home from './components/home';
 import Navbar from "./components/navBar";
 import Cart from "./components/cart";
 import Genre from "./components/genre";
+import Product from "./components/productPage";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path='/cart' exact component={Cart} />
             <Route path='/genre' exact component={Genre} />
+            <Route path="/books/:id" exact component={Product} />
           </Switch>
         </Router>
       </div>

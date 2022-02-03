@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+
 
 html{
   scroll-behavior: smooth;
@@ -159,4 +162,84 @@ body {
   color: #FF6363;
   transition: all 1s;
 }
+
+.books-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: 'Comfortaa', cursive;
+  
+}
+
+.books-container .book-block{
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: solid #e67300 4px;
+  max-width: 215px;
+  word-wrap: break-word;
+  transition: all 1s;
+  color:black;
+}
+
+.books-container .book-block:hover{
+  border-color: #850101;
+}
+
+.books-container .book-block .book-img{
+  width: 150px;
+  height: 250px;
+  padding: 10px 30px 10px 30px;
+}
+
+.books-container .book-block .book-name{
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.books-container .book-block .book-name:hover{
+  
+  color: #fc7703;
+}
+
+.books-container .book-block .data-block{
+  padding-left: 10px;
+  
+}
+
+.product-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.product-container .product-img-block .img{
+  width: 300px;
+  height: 450px;
+  border-radius: 5px;
+}
+
+.product-container .product-info-block{
+  padding-left: 10%;
+}
+
+.product-container .product-info-block .productHeading{
+  font-size: 30px;
+}
+
+.product-container .product-info-block .productGenre{
+  font-family: 'Short Stack', cursive;
+    color:#99A3BA;
+
+} 
+
+.product-container .product-info-block .productPrice{
+  font-size: 20px;
+}
+/*mobile*/
 
