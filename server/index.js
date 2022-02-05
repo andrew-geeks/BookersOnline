@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const home = require('./routes/home');
 const books =  require('./routes/Books');
 const cors = require("cors");
+const dotenv = require('dotenv');
 
 //app
 const app = express();
@@ -17,12 +18,18 @@ app.use(cors(
     }
 ))
 
+dotenv.config();
+const mdb_uid=`${process.env.MDB_UID}`; //mongodb username
+const mdb_pwd=`${process.env.MDB_PSWD}`; //mongodb password
+
 //mongoAtlas conn.
-const url = "mongodb+srv://bksonline:TS2cTEPhbM2ETHc3@cluster0.b0wty.mongodb.net/bookersonline?retryWrites=true&w=majority";
+const url = "mongodb+srv://"+mdb_uid+":"+mdb_pwd+"@cluster0.b0wty.mongodb.net/bookersonline?retryWrites=true&w=majority";
 const connectionParams = {
     useNewUrlParser:true,
     useUnifiedTopology:true 
 }
+
+
 mongoose.connect(url,connectionParams)
     .then(()=>{
         console.log("db connected");
