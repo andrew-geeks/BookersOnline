@@ -226,6 +226,7 @@ body {
 
 .product-container .product-info-block{
   padding-left: 10%;
+  word-wrap: break-word;
 }
 
 .product-container .product-info-block .productHeading{
@@ -241,5 +242,75 @@ body {
 .product-container .product-info-block .productPrice{
   font-size: 20px;
 }
-/*mobile*/
 
+/* CSS */
+.cart-btn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #e67300;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  word-wrap: break-word;
+}
+
+.cart-btn:hover,
+.cart-btn:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.cart-btn:hover {
+  transform: translateY(-1px);
+}
+
+.cart-btn:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.proicon{
+  padding-left: 10px;
+  color: white;
+}
+
+.gen-block{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px 20px 20px;
+}
+
+
+
+/*mobile*/
+@media only screen and (max-width: 600px) {
+  .product-container .product-info-block{
+    padding-left: 5%;
+  }
+
+  .cart-btn{
+    margin-top: 10px;
+    width: 250px;
+  }
+}

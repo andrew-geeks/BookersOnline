@@ -9,7 +9,7 @@ import Navbar from "./components/navBar";
 import Cart from "./components/cart";
 import Genre from "./components/genre";
 import Product from "./components/productPage";
-
+import GenPage from "./components/genrePage";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
             <Route path='/cart' exact component={Cart} />
             <Route path='/genre' exact component={Genre} />
             <Route path="/books/:id" exact component={Product} />
+            <Route path='/genre/:getGenre' exact component={GenPage} />
           </Switch>
         </Router>
       </div>

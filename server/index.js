@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const home = require('./routes/home');
 const books =  require('./routes/Books');
+const genre = require('./routes/Genre');
 const cors = require("cors");
 const dotenv = require('dotenv');
 
@@ -45,6 +46,7 @@ mongoose.connect(url,connectionParams)
 //routes
 app.use("/",home);
 app.use("/books",books);
+app.use("/genre",genre);
 
 //port
 app.listen(4000,()=>{
