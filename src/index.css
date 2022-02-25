@@ -101,7 +101,7 @@ body {
   position: relative;
   z-index: 1;
   flex: 1 1 auto;
-  width: 1%;
+  width: 200px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -115,7 +115,7 @@ body {
   border: 1px solid var(--group-border);
   transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
 }
-.form-group:focus-within > span {
+.form-group:focus-within > button {
   color: var(--group-color-focus);
   background: #FF6363;
   border-color: #FF6363;
@@ -301,7 +301,74 @@ body {
   padding: 20px 20px 20px 20px;
 }
 
+.no-data{
+  text-align: center;
+}
 
+.acc-btn-block{
+  padding-top: 20%;
+  padding-left: 40%;
+}
+.acc-btn-block .cart-btn{
+  margin-left: 10px;
+}
+
+.signup-head{
+  text-align: center;
+  padding-top: 2%;
+  font-size: 30px;
+}
+
+.auth-block{
+  padding: 20px 10px 10px 20px;
+  flex-wrap: wrap;
+  width: 23%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255,18,68);
+  background: radial-gradient(circle, rgba(255,18,68,1) 32%, rgba(251,131,50,1) 75%);
+  border-radius: 10px;
+}
+
+.auth-block input,button{
+  height: 25px;
+  margin-top: 10px;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  border: 3px solid #ccc;
+  transition: 0.5s;
+  outline: none;
+}
+
+.auth-block button{
+  margin-top: 25px;
+  margin-left: 33%;
+  margin-right: 50%;
+  width: 100px;
+  border: 2px solid #ccc;
+  background-color: gold;
+  font-size: 14px;
+  font-family: 'Patrick Hand', cursive;
+  
+}
+
+.auth-block button:hover{
+  background-color: black;
+  color: white;
+}
+
+.auth-block input:focus{
+  border: 3px solid black;
+}
+
+.form-ps-wrong{
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  margin-top: 350px;  
+}
 
 /*mobile*/
 @media only screen and (max-width: 600px) {
@@ -310,7 +377,7 @@ body {
   }
 
   .cart-btn{
-    margin-top: 10px;
+    margin-top: 15px;
     width: 250px;
   }
 }

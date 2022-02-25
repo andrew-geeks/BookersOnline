@@ -10,6 +10,9 @@ import Cart from "./components/cart";
 import Genre from "./components/genre";
 import Product from "./components/productPage";
 import GenPage from "./components/genrePage";
+import SearchPage from "./components/searchPage";
+import Account from "./components/account";
+import Signup from "./components/signup";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
             <Route path='/genre' exact component={Genre} />
             <Route path="/books/:id" exact component={Product} />
             <Route path='/genre/:getGenre' exact component={GenPage} />
+            <Route path='/search' exact component={SearchPage} />
+            <Route path='/account' exact component={Account} />
+            <Route path='/account/signup' exact component={Signup} />
           </Switch>
         </Router>
       </div>

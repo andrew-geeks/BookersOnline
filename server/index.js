@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const home = require('./routes/home');
 const books =  require('./routes/Books');
 const genre = require('./routes/Genre');
+const search = require('./routes/Search')
+const account = require('./routes/Account');
 const cors = require("cors");
 const dotenv = require('dotenv');
 
@@ -47,6 +49,9 @@ mongoose.connect(url,connectionParams)
 app.use("/",home);
 app.use("/books",books);
 app.use("/genre",genre);
+app.use('/search',search);
+app.use('/account',account);
+
 
 //port
 app.listen(4000,()=>{

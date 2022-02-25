@@ -38,7 +38,23 @@ const AuthorSchema = new mongoose.Schema({
     } 
 })
 
+const UserSchema = new mongoose.Schema({
+    fullname:{
+        type: String,
+        required:true
+    },
+    email:{
+        type: String,
+        unique:true,
+        required:true
+    },
+    password:{
+        type: String,
+        required:true
+    }
+})
+
 const Book = mongoose.model("Book",BookSchema);
 const Author = mongoose.model("Author",AuthorSchema);
-
-module.exports = {Book,Author};
+const User = mongoose.model("User",UserSchema);
+module.exports = {Book,Author,User};
