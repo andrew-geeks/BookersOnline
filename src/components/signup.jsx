@@ -3,37 +3,30 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Signup(){
-    const [value,setValue] = useState("")
+    const [value,setValue] = useState("") //for mail
     const formData = {name:"",email:"",password:"",cpassword:""}
     const [formValues,setFormValues] = useState(formData);
 
     
-
-    function formSubmit(){
+    const formSubmit = (e) =>{
+        e.preventDefault()   //used to stop page refreshing
         console.log(formValues)
         axios.post("http://localhost:4000/account/signup",formValues)
             .then(res =>{
                 console.log(res.data)
+                setValue("")
             })
             .catch( error => {
                 console.log('actionError', error )
-                setValue("")
+                setValue("Mail already used⚠️!")
               });
-        // const post = async()=>{
-        //     try{
-        //         const resp = await axios.post("http://localhost:4000/account/signup",formValues);
-        //     }
-        //     catch(err){
-        //         console.log(err)
-        //     }
-        // }
-        // post()
+
     }
 
     return(
         <div>
             <h2 className='signup-head'>Signup to BookersOnline!</h2>
-            <p >{value}</p>
+            <p className='mail-notify'>{value}</p>
             {formValues.password!==formValues.cpassword?<p className='form-ps-wrong'>Password not matching⚠️!</p>:<p></p>}
             <div className='auth-block'>
                 <form method='post'>
@@ -42,8 +35,8 @@ function Signup(){
                     <input type="password" name='password' required placeholder='Enter password' size="40" value={formValues.password} onChange={(e) => setFormValues({...formValues, password: e.target.value})}></input>
                     <input type="password" required placeholder='Confirm password' size="40" value={formValues.cpassword} onChange={(e) => setFormValues({...formValues, cpassword: e.target.value})}></input>
                     <button 
-                        type='submit' 
-                        onClick={formSubmit} 
+                        type='submit'  
+                        onClick={formSubmit}
                         disabled={
                             formValues.password!==formValues.cpassword?true:false ||
                             formValues.name===""?true:false ||
@@ -54,6 +47,12 @@ function Signup(){
                     </button>
                 </form>
                 <hr></hr>
+                <div className='auth-btns'>
+                    <button>Google</button>
+                    <button>Facebook</button>
+                </div>
+                
+                
             </div>
         </div>
     )

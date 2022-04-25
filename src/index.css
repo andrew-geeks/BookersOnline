@@ -367,7 +367,18 @@ body {
   text-align: center;
   color: red;
   font-weight: bold;
-  margin-top: 350px;  
+  margin-top: 315px;  
+}
+
+.mail-notify{
+  color:red;
+  text-align: center;
+  margin-top: 315px;
+}
+
+.auth-btns{
+  display: inline;
+  width: 500px;
 }
 
 /*mobile*/

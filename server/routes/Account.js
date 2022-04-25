@@ -25,7 +25,7 @@ router.post('/signup', async(req,res)=>{
             res.status(400).json({ err: 'That email is already in use!' });
         }
         else{
-            res.status(400).json({message:"success!"})
+            res.status(200).json({message:"success!"})
             
         }
     })
