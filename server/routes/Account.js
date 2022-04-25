@@ -18,13 +18,15 @@ router.post('/signup', async(req,res)=>{
     await newUser.save((err)=>{
         if(err){
             //popup.alert("test")
-            console.log(err);
-            res.redirect("",)
-            res.end(JSON.stringify({error:"mail already in use!"}));
-            res.end()
+            //console.log(err);
+            //res.redirect("",)
+            //res.end(JSON.stringify({error:"mail already in use!"}));
+            console.log(err)
+            res.status(400).json({ err: 'That email is already in use!' });
         }
         else{
-            console.log("done!")
+            res.status(400).json({message:"success!"})
+            
         }
     })
     //console.log(req.body)
