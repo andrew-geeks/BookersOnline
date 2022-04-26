@@ -320,11 +320,12 @@ body {
 }
 
 .auth-block{
-  padding: 20px 10px 10px 20px;
-  flex-wrap: wrap;
-  width: 23%;
+  padding: 10px 10px 10px 20px;
+  /*flex-wrap: wrap;*/
+  text-align: center;
+  width: fit-content;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(255,18,68);
@@ -377,9 +378,24 @@ body {
 }
 
 .auth-btns{
-  display: inline;
-  width: 500px;
+  float:right;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  padding-right: 60px;
+  padding-top: 40px;
 }
+
+.auth-btns button{
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: white;
+  border: white;
+}
+
+
+
+
 
 /*mobile*/
 @media only screen and (max-width: 600px) {
@@ -392,3 +408,4 @@ body {
     width: 250px;
   }
 }
+
